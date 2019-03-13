@@ -1,0 +1,74 @@
+@{
+    ViewData["Title"] = "Home Page";
+}
+@{
+    ViewData["Header"] = "The Wall";
+}
+@model ViewModel
+<div class="container">
+    <div class="register col-lg-5 col-md-5 col-sm-12 col-xs-12">
+        <h3>Register</h3>
+        <form asp-controller="Home" asp-action="Register" method="post">
+            <span class="error" asp-validation-for="Register.FirstName"></span>
+            <div class="input-group input-mb-3">
+                <div>
+                    <label class="input-group-text" id="inputGroup-sizing-default" asp-for="Register.FirstName">First Name: </label>
+                </div>
+                <input class="form-control" asp-for="Register.FirstName" type="text" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+            </div>
+
+            <span class="error" asp-validation-for="Register.LastName"></span>
+            <div class="input-group input-mb-3">
+                <div>
+                    <label class="input-group-text" id="inputGroup-sizing-default" asp-for="Register.LastName">Last Name: </label>
+                </div>
+                <input class="form-control" asp-for="Register.LastName" type="text" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+            </div>
+
+            <span class="error" asp-validation-for="Register.Email"></span>
+            <div class="input-group input-mb-3">
+                <div>
+                    <label class="input-group-text" id="inputGroup-sizing-default" asp-for="Register.Email">Email: </label>
+                </div>
+                <input class="form-control" asp-for="Register.Email" type="email" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+            </div>
+
+            <span class="error" asp-validation-for="Register.Password"></span>
+            <div class="input-group input-mb-3">
+                <div>
+                    <label class="input-group-text" id="inputGroup-sizing-default" asp-for="Register.Password">Password: </label>
+                </div>
+                <input class="form-control" asp-for="Register.Password" type="password" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+            </div>
+
+            <span class="error" asp-validation-for="Register.ConfirmPassword"></span>
+            <div class="input-group input-mb-3">
+                <div>
+                    <label class="input-group-text" id="inputGroup-sizing-default" asp-for="Register.ConfirmPassword">Confirm Password: </label>
+                </div>
+                <input class="form-control" asp-for="Register.ConfirmPassword" type="password" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+            </div>
+            <input type="submit" value="Register" class="btn btn-outline-dark">
+        </form>
+    </div>
+    <div class="login col-lg-5 col-md-5 col-sm-12 col-xs-12">
+        <h3>Login</h3>
+        <form asp-controller="Home" asp-action="LoginUser" method="post">
+            <span class="error" asp-validation-for="Login.EmailAttempt"></span>
+            <span class="error" asp-validation-for="Login.PasswordAttempt"></span>
+            <div class="input-group input-mb-3">
+                <div>
+                    <label class="input-group-text" id="inputGroup-sizing-default" asp-for="Login.EmailAttempt">Email: </label>
+                </div>
+                <input class="form-control" asp-for="Login.EmailAttempt" type="email" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+            </div>
+            <div class="input-group input-mb-3">
+                <div>
+                    <label class="input-group-text" id="inputGroup-sizing-default" asp-for="Login.PasswordAttempt">Password: </label>
+                </div>
+                <input class="form-control" asp-for="Login.PasswordAttempt" type="password" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+            </div>
+            <input type="submit" value="Login" class="btn btn-outline-dark">
+        </form>
+    </div>
+</div>

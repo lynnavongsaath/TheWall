@@ -1,0 +1,141 @@
+/* ---------- Global --------- */
+.container-fluid {
+    text-align: center;
+}
+.jumbotron {
+    font-family: 'Rancho', serif;
+    text-align: center;
+    margin: 0px auto;
+}
+textarea {
+    width: 220px;
+    height: 70px;
+    border-radius: 10px;
+    background-color: transparent;
+}
+span.error {
+    color: red;
+}
+h3 {
+    text-shadow: 4px 4px 4px #aaa;
+    margin-bottom: 15px;
+}
+
+/* -------- login and reg page --------- */
+.register {
+    font-family: 'Roboto';
+    display: inline-block;
+    padding: 20px;
+    text-align: left;
+    width: 100%;
+}
+
+.login {
+    font-family: 'Roboto';
+    display: inline-block;
+    vertical-align: top;
+    padding: 20px;
+    text-align: left;
+    width: 100%;
+}
+    .input-group {
+        padding-bottom: 10px;  
+    }
+
+
+/* -------- HOME PAGE --------- */
+
+/* HEADERS */
+.header {
+    background-color: #163262;
+}
+.header p{
+    width: 70%;
+    margin: auto;
+    margin-bottom: 0px;
+    padding: 10px;
+    color: #ffffff;
+}
+
+/* MESSAGE */
+.message {
+    background-image: url('../images/carousel_background.jpg');
+    background-color: #163262;
+    background-repeat: no-repeat;
+    background-position: 50% 45%; 
+}
+    .message form {
+        text-align: center;
+        margin: 100px auto;
+        width: 100%;
+        color: #777777;
+        
+    }
+        .message textarea {
+            width: 50%;
+            color: #777777;
+        }
+        .message input {
+            margin-left: 52%;
+            color: #ffffff;
+        }
+        .message input:hover{
+            background-color: #ffffff;
+            color: #000000;
+        }
+
+/* FORMS */
+form {
+    display: inline-block;
+}
+form label {
+    vertical-align: top;
+}
+form.commentForm input:last-of-type {
+    margin-left: 70%;
+}
+
+/* COMMENTS */
+
+.container-comment{
+    display: inline-block;
+    margin: 0px;
+    text-align: left;
+    vertical-align: top;
+}
+    .container-inner {
+        margin-bottom: 10px;
+        height: auto;
+    }
+        .show-message {
+            padding: 10px;
+            display: inline-block;
+            vertical-align: top;
+            width: 60%;
+        }
+            .show-message h5, .show-message ul{
+                margin: 0;
+            }
+            .comment-inner {
+                padding: 10px;
+                margin-left: 50px;
+            }
+                .comment-inner p, .comment-inner ul {
+                    margin-bottom: 5px;
+                }
+        .commentForm {
+            padding: 10px;
+            text-align: right;
+            float: right;
+            width: 40%;
+        }
+        @media(max-width:950px){
+            .commentForm{
+                float: none;
+                margin-left: 60px;
+                text-align: left;
+            }
+        }
+footer {
+    margin-top: 20px;
+}

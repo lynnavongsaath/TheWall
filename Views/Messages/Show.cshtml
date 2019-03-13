@@ -1,0 +1,49 @@
+@{
+    ViewData["Title"] = "Messages";
+}
+@{
+    ViewData["Header"] = "Coding Dojo's Wall";
+}
+@model List<Messages>
+<div class="header">
+    <p><span class="font-weight-bold">Hi @ViewBag.CurrUser.FirstName!</span>  Welcome to Coding Dojo's messaging wall.</p>
+    <p>Communicate with your fellow cohorts! You can post messages or questions about assignments from class so that all your classmates can respond to you. Or just leave a message!</p>
+</div>
+
+<div class="message">
+    <form action="PostMessage" method="post">
+        <label for="Message">Post a message:</label>
+        <textarea name="Message" cols="30" rows="10"></textarea>
+        <br>
+        <input class="btn btn-outline-dark formInput" type="submit" value="Message">
+    </form>
+</div>
+<div class="container-comment">
+    @foreach(var message in Model)
+    {
+        <div class="container-inner">
+            <div class="show-message">
+                <h5><span class="text-info">@message.Creator.FullName</span> messaged on @message.CreatedAt.ToString("MMMM dd, yyyy") at @message.CreatedAt.ToString("h:mmtt")</h5>
+                <ul>" @message.Message "</ul>
+                @foreach(var comment in message.Comments)
+                {
+                    <div class="comment-inner">
+                        <p><span class="d-inline p-2 bg-dark text-white">@comment.Creator.FullName</span> replied on @comment.CreatedAt.ToString("MMMM dd, yyyy") at @comment.CreatedAt.ToString("h:mmtt")</p>
+                        <ul>" @comment.Comment "</ul>
+                    </div>
+                }     
+            </div>
+            <form class="commentForm"action="PostComment" method="post">
+                <input type="hidden" name="MessageId" value="@message.MessageId">
+                <label for="Comment">Post comment:</label>
+                <textarea name="Comment" cols="30" rows="10"></textarea>
+                <br>
+                <input class="btn btn-outline-dark" type="submit" value="Comment">
+            </form>
+            <div class="clearfix"></div>
+        </div>
+    }
+</div>
+<footer>
+    <a asp-controller="Home" asp-action="Logout"><button class="btn btn-outline-dark pull-right">Logout here!</button></a>
+</footer>
